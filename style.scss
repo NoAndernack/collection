@@ -1,1 +1,21 @@
 @import url(assets/reset.scss);
+
+body {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.carte__one {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    &__pays{grid-area: 1 / 3 / 2 / 6;}
+&__climat{grid-area: 2 / 2 / 6 / 3;}
+&__continent{grid-area: 2 / 3 / 6 / 4;}
+&__capital{grid-area: 2 / 4 / 6 / 5;}
+&__population{grid-area: 2 / 4 / 6 / 5;}
+&__monnaie{grid-area: 2 / 6 / 6 / 7;}
+
+}
