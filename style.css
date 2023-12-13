@@ -1,6 +1,119 @@
 @charset "UTF-8";
-@import url(assets/__reset.scss);
-@import url(assets/__mixin.scss);
+/* http://meyerweb.com/eric/tools/css/reset/ */
+/* v1.0 | 20080212 */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+/* remember to define focus styles! */
+:focus {
+  outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+  text-decoration: none;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
 body {
   overflow: hidden;
 }
@@ -15,54 +128,139 @@ main {
 }
 
 .carte--Australie {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
   grid-area: 1/1/2/3;
   background-color: #FF6E00;
   color: wheat;
+  font-family: "Roboto", sans-serif;
+  padding: 10px;
 }
 
 .carte--Etats-unies {
   grid-area: 1/3/2/5;
   background-color: #FA8932;
   color: wheat;
+  padding: 10px;
+  font-family: "Roboto", sans-serif;
+  padding: 10px;
 }
 
 .carte--Nouvelle-Zélande {
   grid-area: 1/5/2/7;
   background-color: #FFA35C;
   color: wheat;
+  font-family: "Roboto", sans-serif;
+  padding: 10px;
 }
 
 .carte--Espagne {
   grid-area: 1/7/2/9;
   background-color: #FFC599;
+  font-family: "Roboto", sans-serif;
+  padding: 10px;
 }
 
 .carte--Portugal {
   grid-area: 1/9/2/11;
   background-color: #FFE2CC;
+  font-family: "Roboto", sans-serif;
+  padding: 10px;
 }
 
 .carte--Madagascare {
   grid-area: 2/1/3/3;
-  background-color: #38CAE0;
+  background-color: #FF6E00;
+  color: wheat;
+  font-family: "Roboto", sans-serif;
+  padding: 10px;
 }
 
 .carte--Grèce {
   grid-area: 2/3/3/5;
-  background-color: #0CDAFA;
+  background-color: #FFA35C;
+  color: wheat;
+  font-family: "Roboto", sans-serif;
+  padding: 10px;
 }
 
 .carte--Perou {
   grid-area: 2/5/3/7;
-  background-color: #73ECFF;
+  background-color: #FFA35C;
+  color: wheat;
+  font-family: "Roboto", sans-serif;
+  padding: 10px;
 }
 
 .carte--Laos {
   grid-area: 2/7/3/9;
-  background-color: #A6F3FF;
+  background-color: #FFC599;
+  font-family: "Roboto", sans-serif;
+  padding: 10px;
 }
 
 .carte--Philippines {
   grid-area: 2/9/3/11;
-  background-color: #DEFBFF;
+  background-color: #FFE2CC;
+  font-family: "Roboto", sans-serif;
+  padding: 10px;
+}
+
+h1 {
+  font-weight: 700;
+}
+
+p {
+  font-weight: 100;
+}
+
+h2 {
+  font-weight: 400;
+}
+
+.carte {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: -10px 10px 26px 1px rgba(0, 0, 0, 0.43);
+  opacity: 1;
+  transition: opacity 1s ease 0s;
+}
+.carte:hover {
+  opacity: 0.75;
+}
+.carte__pays {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+}
+.carte__climat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.carte__continent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.carte__capital {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.carte__population {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.carte__monnaie {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }/*# sourceMappingURL=style.css.map */
