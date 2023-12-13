@@ -1,32 +1,68 @@
-@import url(assets/reset.scss);
+@charset "UTF-8";
+@import url(assets/__reset.scss);
+@import url(assets/__mixin.scss);
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  overflow: hidden;
 }
 
-.carte__one {
+main {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: repeat(5, 1fr);
-  grid-column-gap: 20px;
-  grid-row-gap: 20px;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 50px;
+  grid-row-gap: 50px;
+  margin: 50px;
 }
-.carte__one__pays {
-  grid-area: 1/3/2/6;
+
+.carte--Australie {
+  grid-area: 1/1/2/3;
+  background-color: #FF6E00;
+  color: wheat;
 }
-.carte__one__climat {
-  grid-area: 2/2/6/3;
+
+.carte--Etats-unies {
+  grid-area: 1/3/2/5;
+  background-color: #FA8932;
+  color: wheat;
 }
-.carte__one__continent {
-  grid-area: 2/3/6/4;
+
+.carte--Nouvelle-Zélande {
+  grid-area: 1/5/2/7;
+  background-color: #FFA35C;
+  color: wheat;
 }
-.carte__one__capital {
-  grid-area: 2/4/6/5;
+
+.carte--Espagne {
+  grid-area: 1/7/2/9;
+  background-color: #FFC599;
 }
-.carte__one__population {
-  grid-area: 2 / 5 / 6 / 6;
+
+.carte--Portugal {
+  grid-area: 1/9/2/11;
+  background-color: #FFE2CC;
 }
-.carte__one__monnaie {
-  grid-area: 2/6/6/7;
+
+.carte--Madagascare {
+  grid-area: 2/1/3/3;
+  background-color: #38CAE0;
+}
+
+.carte--Grèce {
+  grid-area: 2/3/3/5;
+  background-color: #0CDAFA;
+}
+
+.carte--Perou {
+  grid-area: 2/5/3/7;
+  background-color: #73ECFF;
+}
+
+.carte--Laos {
+  grid-area: 2/7/3/9;
+  background-color: #A6F3FF;
+}
+
+.carte--Philippines {
+  grid-area: 2/9/3/11;
+  background-color: #DEFBFF;
 }/*# sourceMappingURL=style.css.map */
