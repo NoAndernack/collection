@@ -165,7 +165,7 @@ let carte = [australie , usa , newZealand , espagne , portugal , madagascar , gr
             // Evenement___________________________________________________
     
             button.addEventListener("click", function() {
-                // Supprime la carte correspondante
+                
                 main.removeChild(section);
             });
             // ------------Ajoute les éléments remplis à leurs blocs correspondants-----------------
