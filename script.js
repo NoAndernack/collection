@@ -83,7 +83,7 @@ let laos = {
 let philippine = {
     picture :"img/philippines.jpg",
     name:"Philippines",
-    climat :"Situé près de l'équateur, l'archipel des Philippines est soumis à un climat tropical. Il y fait chaud et humide toute l'année. On distingue deux types de moussons : Amihan est la mousson du nord-est, caractérisée par des vents frais et secs.",
+    climat :"Situé près de l'équateur, l'archipel des Philippines est soumis à un climat tropical. Il y fait chaud et humide toute l'année.",
     continent : "Asie",
     capital : "La capital est Manille",
     population : "Sa population est estimée à près de 113,9 millions millions d'habitants",
@@ -116,7 +116,8 @@ let carte = [australie , usa , newZealand , espagne , portugal , madagascar , gr
             let blocMonnaie = document.createElement("article");
             let titreMonnaie = document.createElement("h2");
             let paraMonnaie = document.createElement("p");
-            let button = document.createElement("button");
+            let buttonOne = document.createElement("button");
+            let main = document.querySelector("main");
             
     
             // -------------CREATION DES CLASSES-------------
@@ -131,8 +132,11 @@ let carte = [australie , usa , newZealand , espagne , portugal , madagascar , gr
             imgCarte.classList.add("carte__img");
             imgCarte.src=element.picture;
     
+
+            
+    
             // ------------Ajoute les éléments créés à la section-----------------
-            section.appendChild(button);
+            section.appendChild(buttonOne);
             section.appendChild(titre);
             section.appendChild(blocClimat);
             section.appendChild(blocContinent);
@@ -146,7 +150,7 @@ let carte = [australie , usa , newZealand , espagne , portugal , madagascar , gr
             main.appendChild(section);
     
             // -----------------Remplissage des éléments avec les données-------------------
-            button.textContent = "x"
+            buttonOne.textContent = "x"
             titre.textContent = element.name;
             titreClimat.textContent = "Climat";
             paraClimat.textContent = element.climat;
@@ -164,7 +168,7 @@ let carte = [australie , usa , newZealand , espagne , portugal , madagascar , gr
             paraMonnaie.textContent = element.monnaie;
             // Evenement___________________________________________________
     
-            button.addEventListener("click", function() {
+            buttonOne.addEventListener("click", function() {
                 
                 main.removeChild(section);
             });
