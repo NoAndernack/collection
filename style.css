@@ -114,24 +114,59 @@ table {
   border-spacing: 0;
 }
 
-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-family: "Roboto", sans-serif;
-  height: 200px;
-  background: rgb(245, 111, 16);
-  background: linear-gradient(180deg, rgb(245, 111, 16) 0%, rgb(237, 166, 42) 46%, rgb(255, 255, 255) 100%);
+.wrapper {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1000px;
 }
-header h1 {
-  font-size: 120px;
+.wrapper video {
+  width: 100%;
+}
+.wrapper svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.wrapper svg text {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 15px;
+}
+.wrapper svg > rect {
+  -webkit-mask: url(#mask);
+  mask: url(#mask);
+}
+.wrapper svg rect {
+  fill: #fff;
+}
+
+body {
+  margin: 60px 50px 0;
+}
+
+.wrapper:before, .wrapper:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 10px;
+  height: 100%;
+  background-color: #fff;
+}
+.wrapper:before {
+  left: -9px;
+}
+.wrapper:after {
+  right: -5px;
 }
 
 main {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   grid-column-gap: 50px;
   grid-row-gap: 50px;
   margin: 50px;
@@ -145,7 +180,7 @@ main {
   grid-row-gap: 10px;
   grid-area: 1/1/2/3;
   background-color: #545675;
-  color: wheat;
+  color: white;
   font-family: "Roboto", sans-serif;
   padding: 10px;
 }
@@ -153,7 +188,7 @@ main {
 .carte--Etats-unies {
   grid-area: 1/3/2/5;
   background-color: #545675;
-  color: wheat;
+  color: white;
   padding: 10px;
   font-family: "Roboto", sans-serif;
   padding: 10px;
@@ -162,7 +197,7 @@ main {
 .carte--Nouvelle-Zélande {
   grid-area: 1/5/2/7;
   background-color: #545675;
-  color: wheat;
+  color: white;
   font-family: "Roboto", sans-serif;
   padding: 10px;
 }
@@ -172,7 +207,7 @@ main {
   background-color: #545675;
   font-family: "Roboto", sans-serif;
   padding: 10px;
-  color: wheat;
+  color: white;
 }
 
 .carte--Portugal {
@@ -180,13 +215,13 @@ main {
   background-color: #545675;
   font-family: "Roboto", sans-serif;
   padding: 10px;
-  color: wheat;
+  color: white;
 }
 
 .carte--Madagascar {
   grid-area: 2/1/3/3;
   background-color: #545675;
-  color: wheat;
+  color: white;
   font-family: "Roboto", sans-serif;
   padding: 10px;
 }
@@ -194,7 +229,7 @@ main {
 .carte--Grèce {
   grid-area: 2/3/3/5;
   background-color: #545675;
-  color: wheat;
+  color: white;
   font-family: "Roboto", sans-serif;
   padding: 10px;
 }
@@ -202,7 +237,7 @@ main {
 .carte--Perou {
   grid-area: 2/5/3/7;
   background-color: #545675;
-  color: wheat;
+  color: white;
   font-family: "Roboto", sans-serif;
   padding: 10px;
 }
@@ -212,7 +247,7 @@ main {
   background-color: #545675;
   font-family: "Roboto", sans-serif;
   padding: 10px;
-  color: wheat;
+  color: white;
 }
 
 .carte--Philippines {
@@ -220,7 +255,7 @@ main {
   background-color: #545675;
   font-family: "Roboto", sans-serif;
   padding: 10px;
-  color: wheat;
+  color: white;
 }
 
 h1 {
@@ -244,7 +279,7 @@ h2 {
 .carte {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   opacity: 1;
   transition: opacity 1s ease 0s;
   transition: transform 0.2s;
@@ -298,6 +333,17 @@ h2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+.carte button {
+  text-align: center;
+  opacity: 30%;
+  align-self: center;
+  border-radius: 50% 50% 50% 50%;
+  border: none;
+  transition: transform 0.2s;
+}
+.carte button:hover {
+  transform: scale(1.3);
 }
 
 @media only screen and (min-width: 550px) and (max-width: 1225px) {
@@ -354,6 +400,9 @@ h2 {
   }
 }
 @media (max-width: 550px) {
+  header h1 {
+    font-size: 85px;
+  }
   main {
     display: flex;
     flex-direction: column;

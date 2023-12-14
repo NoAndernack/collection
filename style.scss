@@ -120,29 +120,88 @@ table {
     border-spacing: 0;
 }
 
-// body {
-//     overflow: hidden;
+
+// J'avoue tout j'ai copié collé l'effet
+
+.wrapper {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1000px;
+    
+    video {
+      width: 100%; 
+    }
+    
+    svg { 
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      
+      text {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 900;
+        text-transform: uppercase;
+        font-size: 15px;
+      }
+      
+      > rect {
+        -webkit-mask: url(#mask);
+        mask: url(#mask);
+      }
+      
+      rect {
+        fill: #fff;
+      }
+    }
+  }
+  
+  // jusqu'ici
+  body {
+    margin: 60px 50px 0;
+  }
+  
+  .wrapper {
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 10px;
+      height: 100%;
+      background-color: #fff;
+    }
+    
+    &:before {
+      left: -9px;
+    }
+    
+    &:after {
+      right: -5px;
+    }
+  }
+// header {
+//     display:flex;
+//     align-items:center;
+//     justify-content: center;
+//     color:white;
+//     font-family: 'Roboto', sans-serif;
+//     height: 200px;
+//     background: rgb(255,154,84);
+// background: linear-gradient(180deg, rgba(255,154,84,1) 0%, rgba(255,210,131,1) 46%, rgba(255,255,255,1) 100%);
+
+
+// h1{
+//     font-size: 120px;
 // }
-header {
-    display:flex;
-    align-items:center;
-    justify-content: center;
-    color:white;
-    font-family: 'Roboto', sans-serif;
-    height: 200px;
-    background: rgb(245,111,16);
-background: linear-gradient(180deg, rgba(245,111,16,1) 0%, rgba(237,166,42,1) 46%, rgba(255,255,255,1) 100%);
-
-
-h1{
-    font-size: 120px;
-}
-}
+// }
 
 main {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     grid-column-gap: 50px;
     grid-row-gap: 50px;
     margin: 50px;
@@ -157,14 +216,14 @@ main {
     grid-row-gap: 10px;
     grid-area: 1 / 1 / 2 / 3;
     background-color: #545675;
-    color: wheat;
+    color: white;
     @include carteDesign;
 }
 
 .carte--Etats-unies {
     grid-area: 1 / 3 / 2 / 5;
     background-color: #545675;
-    color: wheat;
+    color: white;
     padding: 10px;
     @include carteDesign;
 }
@@ -172,7 +231,7 @@ main {
 .carte--Nouvelle-Zélande {
     grid-area: 1 / 5 / 2 / 7;
     background-color: #545675;
-    color: wheat;
+    color: white;
     @include carteDesign;
 }
 
@@ -180,7 +239,7 @@ main {
     grid-area: 1 / 7 / 2 / 9;
     background-color: #545675;
     @include carteDesign;
-    color: wheat;
+    color: white;
 
 }
 
@@ -188,27 +247,27 @@ main {
     grid-area: 1 / 9 / 2 / 11;
     background-color: #545675;
     @include carteDesign;
-    color: wheat;
+    color: white;
 }
 
 .carte--Madagascar {
     grid-area: 2 / 1 / 3 / 3;
     background-color: #545675;
-    color: wheat;
+    color: white;
     @include carteDesign;
 }
 
 .carte--Grèce {
     grid-area: 2 / 3 / 3 / 5;
     background-color: #545675;
-    color: wheat;
+    color: white;
     @include carteDesign;
 }
 
 .carte--Perou {
     grid-area: 2 / 5 / 3 / 7;
     background-color: #545675;
-    color: wheat;
+    color: white;
     @include carteDesign;
 }
 
@@ -216,14 +275,14 @@ main {
     grid-area: 2 / 7 / 3 / 9;
     background-color: #545675;
     @include carteDesign;
-    color: wheat;
+    color: white;
 }
 
 .carte--Philippines {
     grid-area: 2 / 9 / 3 / 11;
     background-color: #545675;
     @include carteDesign;
-    color: wheat;
+    color: white;
 }
 
 h1 {
@@ -247,7 +306,7 @@ h2 {
 .carte {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
 
     opacity: 1;
     transition: opacity 1s ease 0s;
@@ -313,6 +372,18 @@ h2 {
         display: flex;
         flex-direction: column;
         justify-content: center;
+    }
+    button{
+        text-align: center;
+        opacity: 30%;
+        align-self: center;
+        border-radius : 50% 50% 50% 50%;
+        border : none ;
+        transition: transform .2s;
+        &:hover {
+            transform: scale(1.3);
+   
+        }
     }
 }
 
@@ -390,6 +461,11 @@ h2 {
 }
 
 @media (max-width:550px) {
+    header {
+        h1{
+            font-size: 85px;
+        }
+    }
     main {
         display: flex;
         flex-direction: column;

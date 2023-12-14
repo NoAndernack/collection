@@ -116,6 +116,7 @@ let carte = [australie , usa , newZealand , espagne , portugal , madagascar , gr
             let blocMonnaie = document.createElement("article");
             let titreMonnaie = document.createElement("h2");
             let paraMonnaie = document.createElement("p");
+            let button = document.createElement("button");
             
     
             // -------------CREATION DES CLASSES-------------
@@ -131,6 +132,7 @@ let carte = [australie , usa , newZealand , espagne , portugal , madagascar , gr
             imgCarte.src=element.picture;
     
             // ------------Ajoute les éléments créés à la section-----------------
+            section.appendChild(button);
             section.appendChild(titre);
             section.appendChild(blocClimat);
             section.appendChild(blocContinent);
@@ -138,12 +140,13 @@ let carte = [australie , usa , newZealand , espagne , portugal , madagascar , gr
             section.appendChild(blocPopulation);
             section.appendChild(blocMonnaie);
             section.appendChild(imgCarte);
+            
     
             // -----------------Ajoute la section au "main"-------------------
             main.appendChild(section);
     
             // -----------------Remplissage des éléments avec les données-------------------
-            
+            button.textContent = "x"
             titre.textContent = element.name;
             titreClimat.textContent = "Climat";
             paraClimat.textContent = element.climat;
@@ -159,7 +162,12 @@ let carte = [australie , usa , newZealand , espagne , portugal , madagascar , gr
     
             titreMonnaie.textContent = "Monnaie";
             paraMonnaie.textContent = element.monnaie;
+            // Evenement___________________________________________________
     
+            button.addEventListener("click", function() {
+                // Supprime la carte correspondante
+                main.removeChild(section);
+            });
             // ------------Ajoute les éléments remplis à leurs blocs correspondants-----------------
             blocClimat.appendChild(titreClimat);
             blocClimat.appendChild(paraClimat);
